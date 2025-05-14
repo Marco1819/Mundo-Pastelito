@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundo Pastelito</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff8f2;
+      color: #5b3e2b;
+    }
+    header {
+      background: #f7c6b0;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      text-align: center;
+      background: #f0a98c;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 30px;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: white;
+      border: 1px solid #e0b7a2;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .producto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .detalle {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #7b4e35;
+    }
+    .producto.mostrar-detalle .detalle {
+      display: block;
+    }
+    footer {
+      background: #f7c6b0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(producto => {
+        producto.addEventListener('click', () => {
+          producto.classList.toggle('mostrar-detalle');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Mundo Pastelito</h1>
+    <p>Postres personalizados hechos con amor</p>
+  </header>
+
+  <nav>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="nosotros">
+    <h2>Acerca de Nosotros</h2>
+    <p>Somos una repostería local dedicada a crear postres personalizados para toda ocasión. Nuestro compromiso es ofrecer productos deliciosos, frescos y con diseño único para cada cliente.</p>
+  </section>
+
+  <section id="catalogo">
+    <h2>Catálogo de Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://media.giphy.com/media/fxvQz5NpnJfv0WjoZr/giphy.gif" alt="Pastel de Chocolate">
+        <h3>Pastel de Chocolate</h3>
+        <p>$350 MXN</p>
+        <div class="detalle">Pastel de chocolate suave con cobertura de ganache, ideal para celebraciones familiares.</div>
+      </div>
+      <div class="producto">
+        <img src="https://media.giphy.com/media/TDQYZkBxo3fMc7OVdz/giphy.gif" alt="Crumble Cookies">
+        <h3>Crumble Cookies</h3>
+        <p>$150 MXN (6 piezas)</p>
+        <div class="detalle">Galletas estilo crumble, crocantes por fuera y suaves por dentro, hechas con mantequilla real.</div>
+      </div>
+      <div class="producto">
+        <img src="https://media.giphy.com/media/LP3c6YJsrG7jZyQpHV/giphy.gif" alt="Mini Cheesecakes">
+        <h3>Mini Cheesecakes</h3>
+        <p>$180 MXN (4 piezas)</p>
+        <div class="detalle">Cheesecakes individuales con base de galleta, decorados con fruta de temporada.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto y Pedidos</h2>
+    <p>Haz tu pedido por WhatsApp: <a href="https://wa.me/5211234567890">+52 1 123 456 7890</a></p>
+    <p>O escríbenos al correo: <a href="mailto:mundopastelito@gmail.com">mundopastelito@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mundo Pastelito. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
